@@ -1,0 +1,30 @@
+[
+  {
+    "name": "John Doe",
+    "email": "johndoe0101@gmail.com",
+    "password": "imdummyjohnny",
+    "consfirm": "imdummyjohnny",
+    "completed": false
+  },
+  {
+    "name": "Jane Doe",
+    "email": "janedoe0202@gmail.com",
+    "password": "imjanieminnie",
+    "consfirm": "imjanieminnie",
+    "completed": false
+  },
+  {
+    "name": "Chris Williams",
+    "email": "mynameischris@gmail.com",
+    "password": "chrisgochris",
+    "consfirm": "chrisgochris",
+    "completed": false
+  },
+  {
+    "name": "Christal Williams",
+    "email": "mynameischristal@gmail.com",
+    "password": "iamshiningchristal",
+    "consfirm": "iamshiningchristal",
+    "completed": false
+  }
+]
