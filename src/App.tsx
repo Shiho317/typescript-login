@@ -1,11 +1,31 @@
+import { Wrapper } from './App.style';
+import SignIn from './SignIn/SignIn';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import SignUp from './SignUp/SignUp';
+import Home from './Home/Home';
 
-import './App.css';
+export type UserInfo = {
+  name: string;
+  email: string;
+  password: string;
+  consfirm: string;
+}
 
 function App() {
   return (
-    <div className="App">
-      hello
-    </div>
+    <Wrapper>
+      <Router>
+        <Routes>
+          <Route path="/" element={<SignUp/>}/>
+          <Route path="/login" element={<SignIn/>}/>
+          <Route path="/home" element={<Home/>}/>
+        </Routes>
+      </Router>
+    </Wrapper>
   );
 }
 
