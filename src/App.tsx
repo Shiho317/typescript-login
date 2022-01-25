@@ -1,14 +1,12 @@
 import { Wrapper } from './App.style';
-import SignIn from './SignIn/SignIn';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
 import SignUp from './SignUp/SignUp';
 import Home from './Home/Home';
 import React, { useState } from 'react';
 import datas from './data.json';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+
+
 
 export type UserInfo = {
     name: string;
@@ -45,6 +43,7 @@ function App() {
       datas.map(data => 
         data.email === user.email ? data : null )
     }
+    console.log(findEmail)
   };
 
   const [isLogin, setIsLogIn] = useState(false);
@@ -56,12 +55,22 @@ function App() {
 
   return (
     <Wrapper>
-      <Router>
-        <Routes>
-          <Route path="/login" element={<SignIn Completed={FindUser}/>}/>
-          
-        </Routes>
-      </Router>
+      <div className='login'>
+      <h3>Log In</h3>
+      <div className='contents-wrap'>
+        <div className='email-input'>
+          <TextField fullWidth id="outlined-basic" label="email" variant="outlined" value={isUser.email} onChange={onChangeUser} />
+        </div>
+        <div className='password-input'>
+          <TextField fullWidth id="outlined-basic" label="password" variant="outlined" />
+        </div>
+        <div className='submit-btn'>
+          <Button fullWidth variant="contained" disableElevation onClick={() => FindUser(isUser)}>
+            Log In
+          </Button>
+        </div>
+      </div>
+      </div>
     </Wrapper>
   );
 }
