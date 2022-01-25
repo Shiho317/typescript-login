@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import SignUp from './SignUp/SignUp';
 import Home from './Home/Home';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import datas from './data.json';
 
 export type UserInfo = {
@@ -18,15 +18,34 @@ export type UserInfo = {
     completed: boolean;
 }
 
+const initialInfo: UserInfo = {
+  name: '',
+  email: '',
+  password: '',
+  consfirm: '',
+  completed: false
+}
+
+console.log(datas[3])
+
 function App() {
 
-  const [isEmail, setIsEmail] = useState('')
+  const [isUser, setIsUser] = useState<UserInfo>(initialInfo);
+
+  const onChangeUser = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    setIsUser({...isUser, email: value});
+  }
+
   const [isPassword, setIsPassword] = useState('');
 
-  const Completed = (user: UserInfo) => {
-    const findUser = datas.filter(data => data.email === user.email)
-    console.log(findUser)
-  }
+  const FindUser = (user: UserInfo) => {
+    const findEmail = datas.find(data => data.email === user.email)
+    if(findEmail){
+      datas.map(data => 
+        data.email === user.email ? data : null )
+    }
+  };
 
   const [isLogin, setIsLogIn] = useState(false);
 
@@ -39,9 +58,8 @@ function App() {
     <Wrapper>
       <Router>
         <Routes>
-          <Route path="/" element={<SignUp isEmail={isEmail} Completed={Completed}/>}/>
-          <Route path="/login" element={<SignIn />}/>
-          <Route path="/home" element={<Home/>}/>
+          <Route path="/login" element={<SignIn Completed={FindUser}/>}/>
+          
         </Routes>
       </Router>
     </Wrapper>
