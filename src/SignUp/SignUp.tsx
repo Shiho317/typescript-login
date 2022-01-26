@@ -1,13 +1,9 @@
 import { Wrapper } from './SignUp.style';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { UserInfo } from '../App';
 
-type Props = {
-  user: UserInfo;
-}
 
-const SignUp: React.FC<Props> = ({user}) => {
+const SignUp: React.FC = () => {
   return(
     <Wrapper>
       <h3>Sign Up</h3>

@@ -1,11 +1,7 @@
 import { Wrapper } from "./Home.style";
-import { UserInfo } from '../App';
 
-type Props = {
-  user: UserInfo;
-}
 
-const Home: React.FC<Props> = ({user}) => {
+const Home: React.FC = () => {
   return(
     <Wrapper>
       Hello
