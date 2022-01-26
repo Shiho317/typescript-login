@@ -20,4 +20,11 @@ export const Wrapper = styled.div`
     flex-direction: column;
     gap: 2rem
   }
+
+  .to-signup,
+  .to-guest{
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
 `;

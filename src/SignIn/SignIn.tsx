@@ -98,6 +98,10 @@ function SignIn() {
           )}
           
         </div>
+        <div className='option'>
+          <p className='to-signup'>You don't have an account? Sign up from <Link to='/signup'>here</Link></p>
+          <p className='to-guest'>Continue as a <Link to='/home'>guest</Link></p>
+        </div>
       </div>
       </div>
     </Wrapper>
